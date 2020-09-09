@@ -32,8 +32,8 @@ jobs:
           name: install dependencies
           command: |
             sudo apt-get update -qq
-            # NOTE(kamo): cmake libsndfile1-dev will be download using anacond:
-            sudo apt-get install -qq -y bc
+            # NOTE(kamo): cmake will be download using anacond:
+            sudo apt-get install -qq -y bc libsndfile1-dev
             sudo localedef -f UTF-8 -i en_US en_US
       - run:
           name: install espnet
@@ -82,8 +82,8 @@ jobs:
           name: install dependencies
           command: |
             sudo apt-get update -qq
-            # NOTE(kamo): cmake libsndfile1-dev will be download using anacond:
-            sudo apt-get install -qq -y bc
+            # NOTE(kamo): cmake will be download using anacond:
+            sudo apt-get install -qq -y bc libsndfile1-dev 
             sudo localedef -f UTF-8 -i en_US en_US
       - run:
           name: install espnet
@@ -131,10 +131,10 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            # NOTE(kamo): cmake sndfile will be download using anacond:
+            # NOTE(kamo): cmake will be download using anacond:
             yum install -y git centos-release-scl make bzip2 wget which unzip bc
             yum-config-manager --enable rhel-server-rhscl-7-rpms
-            yum install -y devtoolset-7-gcc-c++
+            yum install -y devtoolset-7-gcc-c++ sndfile
             localedef -f UTF-8 -i en_US en_US
       - checkout
       - run:
@@ -192,8 +192,8 @@ jobs:
           name: install dependencies
           command: |
             apt-get update -qq
-            # NOTE(kamo): cmake sndfile will be download using anacond:
-            apt-get install -qq -y build-essential git g++-6 unzip bzip2 wget curl bc locales make
+            # NOTE(kamo): cmake will be download using anacond:
+            apt-get install -qq -y build-essential git g++-6 unzip bzip2 wget curl bc locales make libsndfile1-dev
             localedef -f UTF-8 -i en_US en_US
       - run:
           name: install espnet
